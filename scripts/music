@@ -1,0 +1,13 @@
+#!/bin/bash
+
+status=$(playerctl status)
+
+while [1] do
+  if [ $status = "Playing" ]
+  then
+    echo "Play"
+  elif [ $status = "Paused" ]
+  then
+   echo "Paused"
+  fi
+done

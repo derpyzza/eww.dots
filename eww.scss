@@ -1,0 +1,82 @@
+window {
+  background: transparent;
+  border-radius: 20px;
+}
+
+.button {
+  background: transparent;
+  color: black;
+  border-radius: 10px;
+}
+
+button {
+  color: black;
+  background: transparent;
+}
+
+box {
+  // background: green;
+  color: black;
+}
+
+.dash {
+  background: blue;
+}
+
+////WIDGETS////
+.bar {
+  background: white;
+  border-radius: 10px;
+}
+
+.test {
+  background: red;
+}
+
+.work_button {
+  color: #B57EF2;
+  font-size: 24;
+}
+
+.work_button:selected {
+  color: blue;
+}
+
+//BATTERY
+.bat_bar {
+  color: #B57EF2;
+  background: #AAA;
+}
+
+//MUSIC
+.vol_bar {
+  color: black;
+  background: #AAA;
+}
+
+//CLOCK 
+.clock_widget {
+  background: #BBB;
+  padding: 3px;
+  font-size: 20;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.clock_hour {
+  color: #B57EF2;
+}
+
+.clock_minute {
+  color: white;
+}
+
+//MUSIC
+.music {
+  font-size: 20;
+}
+
+//TOPBAR
+.top_bar {
+  margin-top: 10px;
+}

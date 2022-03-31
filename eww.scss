@@ -1,19 +1,47 @@
+$bg: #161616;
+$purp: #B57EF2;
+$gray: #222;
+
 window {
   background: transparent;
-  border-radius: 20px;
 }
 
 .button {
   background: transparent;
-  color: black;
-  border-radius: 10px;
+  color: white;
+  // border-left: 1px solid $purp;
 }
 
 button {
-  color: black;
+  color: white;
   background: transparent;
+  font-size: 24;
 }
 
+button.clock {
+  padding: 0;
+  margin: 0;
+}
+button.vol {
+  padding: 0;
+}
+button.bat {
+  padding: 0;
+  margin: 0;
+}
+button.focused {
+  color: $purp;
+}
+button.occupied {
+  color: pink;
+}
+button.unoccupied {
+  color: $gray;
+}
+.work_button {
+  color: $purp;
+  font-size: 24;
+}
 box {
   // background: green;
   color: black;
@@ -25,38 +53,28 @@ box {
 
 ////WIDGETS////
 .bar {
-  background: white;
-  border-radius: 10px;
+  background: $bg;
 }
 
 .test {
   background: red;
 }
 
-.work_button {
-  color: #B57EF2;
-  font-size: 24;
-}
-
-.work_button:selected {
-  color: blue;
-}
-
 //BATTERY
 .bat_bar {
-  color: #B57EF2;
+  color: $purp;
   background: #AAA;
 }
 
 //MUSIC
 .vol_bar {
-  color: black;
-  background: #AAA;
+  color: white;
+  background: #222;
 }
 
 //CLOCK 
 .clock_widget {
-  background: #BBB;
+  background: #222;
   padding: 3px;
   font-size: 20;
   font-weight: bold;
@@ -64,7 +82,7 @@ box {
 }
 
 .clock_hour {
-  color: #B57EF2;
+  color: $purp;
 }
 
 .clock_minute {
@@ -72,9 +90,6 @@ box {
 }
 
 //MUSIC
-.music {
-  font-size: 20;
-}
 
 //TOPBAR
 .top_bar {

@@ -1,32 +1,45 @@
 #!/usr/bin/python
+#by github.com/derpyzza :)
+
 from subprocess import run
 from sys import argv as args
+import difflib
 
-def workspaces():
-    global wsboxes
-    workspaces = [ "1", "2", "3", "4", "5" ]
-    monitors   = [ "HDMI-1", "eDP-1" ]
+# comment
+# (defwidget workspaces [] (literal :content workspaces))
+#                          │
+#                          │
+#                          ▼
+#                       Box Widget:
+#                 ┌────────────────────┐
+#                 │  ┌──────────────┐  │
+#                 │  │              │─────────► if focused, class = "work_focused"
+#                 │  │Button widget │  │          else if occupied class = "work_occupied"
+#                 │  └──────────────┘  │          else class = unoccupied.
+#                 │                    │          onclick = switch to desktop, set class = work_focused
+#                 │  ┌──────────────┐  │
+#                 │  │              │  │
+#                 │  │ Other Button │  │
+#                 │  └──────────────┘  │
+#                 │                    │
+#                 └────────────────────┘
 
-    wsboxes = ""
+#returns a string with the output of a command
+def run_get(input):
+    return run(input, capture_output=True, text=True, shell=True).stdout.replace('\n', ' ').strip()
 
-    monitor = args[1]
-    for workspace in workspaces:
-        _class = checkws(monitor, workspace)
-        wsboxes += "(button :class '"+_class+"' :onclick 'bspc desktop -f "+workspace+".local' '"+workspace+"')"
+workspaces = run_get("bspc query -D --names").split()
+if workspaces[6] == "Desktop":
+    workspaces.remove("Desktop")
+focused = run_get("bspc query -D -d focused --names")
+occupied = run_get("bspc query -D -d .occupied --names").split()
+final = "(box :orientation \"v\" "
 
-def checkws(m, ws):
-    f_cmd = "bspc query -D -d focused -m {} --names".format(m)
-    f_out = run(f_cmd, capture_output=True, text=True, shell=True).stdout.replace('\n','')
-    
-    o_cmd = "bspc query -D -d .occupied -m {} --names".format(m)
-    o_out = run(o_cmd, capture_output=True, text=True, shell=True).stdout.replace('\n','')
-    
-    if ws in f_out: 
-        return "focused"
-    elif ws in o_out:
-        return "occupied"
+for work in workspaces:
+    if work == focused:
+        final += "(work :desk \"" + work + "\" :class \"focused\") "
     else:
-        return ""
+        final += "(work :desk \"" + work + "\" :class \"unoccupied\") "
+final += ")"
 
-workspaces()
-print("(box :class 'workspaces' :orientation 'v' :halign 'center' :valign 'start' :space-evenly 'false' :spacing '-5'" + wsboxes + " )")
+print(final)

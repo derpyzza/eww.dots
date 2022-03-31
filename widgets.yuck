@@ -14,10 +14,9 @@
   (box  :class "top_bar"
         :orientation "v"
         :valign "start"
-        :spacing 7
-        :height 79
-    (button :class reveal
-            :onclick "eww update reveal=${!reveal}" "X")
+        :spacing 10
+        :height 90
+    ; (button :class reveal :onclick "eww update reveal=${!reveal}" "X")
     (battery)
     (volume)))
 
@@ -30,7 +29,7 @@
 
 ;; Battery Widget
 (defwidget battery []
-  (box
+  (button :class "bat" :onclick "notify-send bat"
     (circular-progress
         :class "bat_bar"
         :value bat
@@ -38,27 +37,22 @@
 
 ;; Volume widget
 (defwidget volume []
-  (circular-progress
+  (button :class "vol" :onclick "notify-send vol"
+     (circular-progress
       :class "vol_bar"
-      :value vol
-      :thickness 6))
+         :value vol
+         :thickness 6)))
 
 ;; Workspaces widget
 ;; TODO: Improve workspace handling
 (defwidget workspaces []
-  (box :orientation "v"
-    (work :desk "1")
-    (work :desk "2")
-    (work :desk "3")
-    (work :desk "4")
-    (work :desk "5")
-    (work :desk "6")))
+    (literal :content workspace))
 
 ;; Workspace Helper widget
-(defwidget work [desk ?name]
+(defwidget work [desk ?class]
   (button
-    :class "work_button"
-    :onclick "bspc desktop -f ${desk}" {name ?: ""}))
+    :class {class ?: "work_button"}
+    :onclick "bspc desktop -f ${desk}" ""))
 
 ;; Music Widget. needs work...
 (defwidget music []
@@ -66,8 +60,9 @@
 
 ;; Clock Widget
 (defwidget time []
-  (box  :orientation "v"
-        :class "clock_widget"
-        :spacing -10
-        (label :text hour :class "clock_hour")
-        (label :text minute :class "clock_minute")))
+  (button :class "clock" :onclick "notify-send clock"
+   (box  :orientation "v"
+         :class "clock_widget"
+         :spacing -10
+         (label :text hour :class "clock_hour")
+         (label :text minute :class "clock_minute"))))

@@ -1,14 +1,15 @@
 (include "variables.yuck")
 (include "widgets.yuck")
 
-(defwindow button
+(defwindow bar
           :monitor 0
           :geometry (geometry 
-                      :x "8px"
+                      :x "0px"
                       :y "0px"
-                      :width "3%"
+                      :width "2%"
                       :height "100%"
-                      :anchor "center right")
+                      :anchor "center left")
+          :reserve (struts :distance "2%" :side "left")
           :stacking "fg"
           :windowtype "dock"
           :wm-ignore "false"

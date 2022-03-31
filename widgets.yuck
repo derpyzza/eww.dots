@@ -2,9 +2,7 @@
 ;; Main Bar
 (defwidget bar []
   (centerbox   :orientation "v"
-               :halign "start"
                :class "bar"
-                :width 49
        (top_bar)
        (workspaces)
        (bottom_bar)))

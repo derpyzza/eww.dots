@@ -6,10 +6,10 @@
           :geometry (geometry 
                       :x "0px"
                       :y "0px"
-                      :width "2%"
+                      :width "3%"
                       :height "100%"
-                      :anchor "center left")
-          :reserve (struts :distance "2%" :side "left")
+                      :anchor "center right")
+          :reserve (struts :distance "3%" :side "right")
           :stacking "fg"
           :windowtype "dock"
           :wm-ignore "false"

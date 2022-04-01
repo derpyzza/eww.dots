@@ -27,19 +27,17 @@
 
 ;; Battery Widget
 (defwidget battery []
-  (button :class "bat" :onclick "notify-send bat"
     (circular-progress
         :class "bat_bar"
         :value bat
-        :thickness 6)))
+        :thickness 6))
 
 ;; Volume widget
 (defwidget volume []
-  (button :class "vol" :onclick "notify-send vol"
      (circular-progress
       :class "vol_bar"
          :value vol
-         :thickness 6)))
+         :thickness 6))
 
 ;; Workspaces widget
 ;; TODO: Improve workspace handling
@@ -54,11 +52,11 @@
 
 ;; Music Widget. needs work...
 (defwidget music []
-  (button :class "music" :onclick "playerctl play-pause" ""))
+  (button :class "music" :onclick "playerctl play-pause" music_status))
 
 ;; Clock Widget
 (defwidget time []
-  (button :class "clock" :onclick "notify-send clock"
+  (button :class "clock" :onclick "eww open --toggle calendar"
    (box  :orientation "v"
          :class "clock_widget"
          :spacing -10

@@ -3,7 +3,28 @@ $purp: #B57EF2;
 $gray: #222;
 
 window {
-  background: red;
+  background: transparent;
+}
+
+calendar {
+  background: $bg;
+  padding: 2px;
+  border-radius: 10px;
+  border: 1px solid $purp;
+}
+
+calendar.header {
+  border: none;
+}
+
+calendar:selected {
+  color: $purp;
+  background: $gray;
+}
+
+calendar.button {
+  background: $bg;
+  color: $purp;
 }
 
 .button {
@@ -31,6 +52,7 @@ button.bat {
 }
 button.focused {
   color: $purp;
+  background: $gray;
 }
 button.occupied {
   color: pink;

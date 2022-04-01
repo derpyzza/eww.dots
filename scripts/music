@@ -2,12 +2,10 @@
 
 status=$(playerctl status)
 
-while [1] do
-  if [ $status = "Playing" ]
-  then
-    echo "Play"
-  elif [ $status = "Paused" ]
-  then
-   echo "Paused"
-  fi
-done
+if [ $status = "Playing" ]
+then
+  echo ""
+elif [ $status = "Paused" ]
+then
+  echo ""
+fi

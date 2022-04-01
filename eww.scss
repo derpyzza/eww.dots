@@ -6,27 +6,6 @@ window {
   background: transparent;
 }
 
-calendar {
-  background: $bg;
-  padding: 2px;
-  border-radius: 10px;
-  border: 1px solid $purp;
-}
-
-calendar.header {
-  border: none;
-}
-
-calendar:selected {
-  color: $purp;
-  background: $gray;
-}
-
-calendar.button {
-  background: $bg;
-  color: $purp;
-}
-
 .button {
   background: red;
   color: white;
@@ -36,7 +15,6 @@ calendar.button {
 button {
   color: white;
   background: transparent;
-  font-size: 24;
 }
 
 button.clock {
@@ -64,41 +42,30 @@ button.unoccupied {
   color: $purp;
   font-size: 24;
 }
-box {
-  // background: green;
-  color: black;
-}
 
-.dash {
-  background: blue;
-}
-
-////WIDGETS////
 .bar {
   background: $bg;
 }
 
-.test {
-  background: red;
-}
-
 //BATTERY
-.bat_bar {
+.bat {
   color: $purp;
-  background: #AAA;
+  // font-size: 24;
+  font-weight: bold;
 }
 
 //MUSIC
-.vol_bar {
+.vol {
   color: white;
-  background: #222;
+  // font-size: 24;
+  font-weight: bold;
 }
 
 //CLOCK 
 .clock_widget {
   background: #222;
   padding: 3px;
-  font-size: 20;
+  // font-size: 20;
   font-weight: bold;
   border-radius: 10px;
 }
@@ -106,14 +73,6 @@ box {
 .clock_hour {
   color: $purp;
 }
-
 .clock_minute {
   color: white;
-}
-
-//MUSIC
-
-//TOPBAR
-.top_bar {
-  margin-top: 10px;
 }

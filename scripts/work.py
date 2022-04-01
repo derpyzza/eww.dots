@@ -33,7 +33,7 @@ if workspaces[6] == "Desktop":
     workspaces.remove("Desktop")
 focused = run_get("bspc query -D -d focused --names")
 occupied = run_get("bspc query -D -d .occupied --names").split()
-final = "(box :orientation \"v\" "
+final = "(box :spacing -5 :orientation \"h\" "
 
 for work in workspaces:
     if work == focused:

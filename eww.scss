@@ -5,19 +5,28 @@ $pink: #FF7EB6;
 
 $work_pad: 10;
 
-window {
-  background: transparent;
+*{
+  padding:0;
 }
 
+window {
+  background: $bg;
+  border-radius: 10px;
+  border: 2px solid $purp;
+}
+
+calendar.highlight {
+  color: #363636;
+}
 calendar {
   background: $bg;
-  padding: 2px;
-  border-radius: 10px;
-  border: 1px solid $purp;
+  padding: 5px;
+  border: none;
 }
 
 calendar.header {
   border: none;
+  color: $pink;
 }
 
 calendar:selected {
@@ -30,13 +39,6 @@ calendar.button {
   color: $purp;
 }
 
-
-.button {
-  background: red;
-  color: white;
-  // border-left: 1px solid $purp;
-}
-
 button {
   color: white;
   background: transparent;
@@ -44,10 +46,6 @@ button {
   margin: 0;
 }
 
-button.clock {
-  padding: 0;
-  margin: 0;
-}
 button.vol {
   padding: 0;
 }
@@ -74,10 +72,6 @@ button.unoccupied {
   padding-left: $work_pad;
   padding-right: $work_pad;
 }
-.work_button {
-  color: $purp;
-  font-size: 24;
-}
 
 .bar {
   background: $bg;
@@ -91,19 +85,22 @@ button.unoccupied {
 }
 
 //MUSIC
-
+box.music{
+  padding: 0;
+}
 .music {
   font-size: 18;
   padding-left: 10;
   padding-right: 10;
 }
-
-.vol {
-  color: white;
-  // font-size: 24;
-  font-weight: bold;
+.now_playing{
+  padding-left: 10;
+  padding-right: 10;
+  border-radius: 10px;
+  background:$gray;
+  color: $purp;
+  font-size: 16;
 }
-
 //CLOCK 
 .clock_widget {
   background: #222;

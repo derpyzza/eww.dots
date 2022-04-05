@@ -9,6 +9,8 @@
 
 ;;MUSIC________________________________________
 (defpoll music_status :interval "2s" "scripts/music")
+(defpoll now_playing :interval "2s" "playerctl metadata --format \"{{title}}\"")
+(defvar show_play false)
 ;;MUSIC________________________________________
 
 ;;WORKSPACES_________________________________________________

@@ -1,4 +1,3 @@
-
 ;; Main Bar
 (defwidget bar []
   (centerbox   :orientation "h"
@@ -13,16 +12,19 @@
         :orientation "h"
         :halign "start"
         :valign "center"
-    (button :onclick "notify-send hi" "X")
+        :space-evenly false
     (music)))
 
 ;; Bottom Section of the bar
 (defwidget bottom_bar [] 
   (box :orientation "h"
        :halign "end"
+       :spacing 10
+       :space-evenly false
+      (volume)
       (time)))
+
 ;; Workspaces widget
-;; TODO: Improve workspace handling
 (defwidget workspaces []
     (literal :content workspace))
 
@@ -34,13 +36,25 @@
 
 ;; Music Widget. needs work...
 (defwidget music []
-  (button :class "music" :onclick "playerctl play-pause" {music_status ?: "M"}))
+  (eventbox :onhover "eww update show_play=true" :onhoverlost "eww update show_play=false"
+   (box :class "music" :space-evenly false :spacing -10
+      (button :class "music" :onclick "playerctl play-pause" {music_status ?: ""})
+      (revealer :class "music" :reveal show_play :duration "100ms" :transition "slideright"
+       (label :class "now_playing" :text now_playing)))))
 
 ;; Clock Widget
 (defwidget time []
-  (button :class "clock" :onclick "eww open --toggle calendar"
+  (button :onclick "eww open --toggle calendar"
    (box  :orientation "h"
          :class "clock_widget"
          :spacing 3
          (label :text hour :class "clock_hour")
          (label :text minute :class "clock_minute"))))
+
+(defwidget volume []
+  (eventbox :onhover "eww update show_vol=true" :onhoverlost "eww update show_vol=false"
+    (box :space-evenly false :spacing 10
+      (button :class "vol" "墳"))))
+      
+
+      

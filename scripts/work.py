@@ -1,11 +1,6 @@
 #!/usr/bin/python
 #by github.com/derpyzza :)
-
 from subprocess import run
-from sys import argv as args
-import difflib
-
-# comment
 # (defwidget workspaces [] (literal :content workspaces))
 #                          │
 #                          │
@@ -29,10 +24,12 @@ def run_get(input):
     return run(input, capture_output=True, text=True, shell=True).stdout.replace('\n', ' ').strip()
 
 workspaces = run_get("bspc query -D --names").split()
+# Unnecessary. removes extra desktop on my laptop's screen ( i use an external monitor for most of my daily usage )
 if workspaces[6] == "Desktop":
     workspaces.remove("Desktop")
 focused = run_get("bspc query -D -d focused --names")
 occupied = run_get("bspc query -D -d .occupied --names").split()
+# Final literal widget string to be outputed.
 final = "(box :spacing -5 :orientation \"h\" "
 
 for work in workspaces:

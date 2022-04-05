@@ -15,8 +15,6 @@
         :valign "center"
     (button :onclick "notify-send hi" "X")
     (music)))
-   
-   
 
 ;; Bottom Section of the bar
 (defwidget bottom_bar [] 

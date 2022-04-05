@@ -1,10 +1,35 @@
 $bg: #161616;
 $purp: #B57EF2;
 $gray: #222;
+$pink: #FF7EB6;
+
+$work_pad: 10;
 
 window {
   background: transparent;
 }
+
+calendar {
+  background: $bg;
+  padding: 2px;
+  border-radius: 10px;
+  border: 1px solid $purp;
+}
+
+calendar.header {
+  border: none;
+}
+
+calendar:selected {
+  color: $purp;
+  background: $gray;
+}
+
+calendar.button {
+  background: $bg;
+  color: $purp;
+}
+
 
 .button {
   background: red;
@@ -15,6 +40,8 @@ window {
 button {
   color: white;
   background: transparent;
+  padding: 0;
+  margin: 0;
 }
 
 button.clock {
@@ -29,14 +56,23 @@ button.bat {
   margin: 0;
 }
 button.focused {
+  font-size: 24;
+  padding-left: $work_pad;
+  padding-right: $work_pad;
   color: $purp;
   background: $gray;
 }
 button.occupied {
-  color: pink;
+  color: $purp;
+  font-size: 24;
+  padding-left: $work_pad;
+  padding-right: $work_pad;
 }
 button.unoccupied {
   color: $gray;
+  font-size: 24;
+  padding-left: $work_pad;
+  padding-right: $work_pad;
 }
 .work_button {
   color: $purp;
@@ -55,6 +91,13 @@ button.unoccupied {
 }
 
 //MUSIC
+
+.music {
+  font-size: 18;
+  padding-left: 10;
+  padding-right: 10;
+}
+
 .vol {
   color: white;
   // font-size: 24;
@@ -64,8 +107,9 @@ button.unoccupied {
 //CLOCK 
 .clock_widget {
   background: #222;
-  padding: 3px;
-  // font-size: 20;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 16;
   font-weight: bold;
   border-radius: 10px;
 }

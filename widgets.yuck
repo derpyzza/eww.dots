@@ -13,25 +13,26 @@
         :orientation "h"
         :halign "start"
         :valign "center"
-    (button :onclick "notify-send hi" "X")))
+    (button :onclick "notify-send hi" "X")
+    (music)))
+   
    
 
 ;; Bottom Section of the bar
 (defwidget bottom_bar [] 
   (box :orientation "h"
        :halign "end"
-    (music)
-    (time)))
+      (time)))
 ;; Workspaces widget
 ;; TODO: Improve workspace handling
 (defwidget workspaces []
     (literal :content workspace))
 
 ;; Workspace Helper widget
-(defwidget work [desk ?class]
+(defwidget work [desk class ?icon]
   (button
     :class {class ?: "work_button"}
-    :onclick "bspc desktop -f ${desk}" ""))
+    :onclick "bspc desktop -f ${desk}" {icon ?: ""}))
 
 ;; Music Widget. needs work...
 (defwidget music []
@@ -42,6 +43,6 @@
   (button :class "clock" :onclick "eww open --toggle calendar"
    (box  :orientation "h"
          :class "clock_widget"
-         :spacing 5
+         :spacing 3
          (label :text hour :class "clock_hour")
          (label :text minute :class "clock_minute"))))

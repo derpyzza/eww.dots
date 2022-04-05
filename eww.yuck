@@ -17,7 +17,7 @@
 
 (defwindow 
   calendar :monitor 0
-           :geometry (geometry :anchor "bottom right" :x "-60px" :y "-5px" :height "60px" :width "60px")
+           :geometry (geometry :anchor "top right" :x "-10px" :y "50px" :height "60px" :width "60px")
            :stacking "fg"
            :windowtype "dock"
            :wm-ignore "true"

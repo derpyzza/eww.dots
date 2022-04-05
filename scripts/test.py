@@ -25,19 +25,24 @@ import difflib
 #                 └────────────────────┘
 
 #returns a string with the output of a command
+
+#for every occupied workspace, return "occupied"
+#for every unfocused workspace, return "unoccupied"
+#and for the focused workspace, return "focused"
+
 def run_get(input):
     return run(input, capture_output=True, text=True, shell=True).stdout.replace('\n', ' ').strip()
 
+# Workspace array
 workspaces = run_get("bspc query -D --names").split()
 if workspaces[6] == "Desktop":
     workspaces.remove("Desktop")
 focused = run_get("bspc query -D -d focused --names")
+# Array
 occupied = run_get("bspc query -D -d .occupied --names").split()
-final = "(box :spacing -5 :orientation \"h\" "
 
 for work in workspaces:
     wk = ''
-    ic=''
     if work == focused:
         wk = 'focused'
     else:
@@ -45,8 +50,4 @@ for work in workspaces:
     for o in occupied:
         if work == o and work != focused:
             wk = 'occupied'
-            ic=''
-    final += "(work :desk \"" + work + "\" :class \""+wk+"\" :icon \""+ic+"\" ) "
-final += ")"
-
-print(final)
+    print(work+': '+wk)

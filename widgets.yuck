@@ -52,9 +52,7 @@
          (label :text minute :class "clock_minute"))))
 
 (defwidget volume []
-  (eventbox :onhover "eww update show_vol=true" :onhoverlost "eww update show_vol=false"
-    (box :space-evenly false :spacing 10
-      (button :class "vol" "墳"))))
+      (label :class "vol" :text {vol + "%"}))
       
 
       

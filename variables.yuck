@@ -1,6 +1,7 @@
 (defpoll bat :interval "20s" "scripts/bat")
-(defpoll vol :interval "3s" "scripts/vol")
-(defvar show_vol false)
+
+;; VOL _________________________________________________
+(defpoll vol :interval "1s" "pamixer --get-volume-human | tr -d \"%\"")
 
 ;; TIME ________________________________________
 (defpoll hour :interval "10s" "date +%I")

@@ -6,10 +6,10 @@
           :geometry (geometry 
                       :x "0px"
                       :y "0px"
-                      :width "3%"
+                      :width "45px"
                       :height "100%"
                       :anchor "center right")
-          :reserve (struts :distance "3%" :side "right")
+          :reserve (struts :distance "45px" :side "right")
           :stacking "bottom"
           :windowtype "dock"
           :wm-ignore "false"
@@ -17,8 +17,8 @@
 
 (defwindow 
   calendar :monitor 0
-           :geometry (geometry :anchor "bottom right" :x "-60px" :y "-5px" :height "60px" :width "60px")
+           :geometry (geometry :anchor "bottom right" :x "-60px" :y "-5px" :height "140px" :width "140px")
            :stacking "fg"
            :windowtype "dock"
            :wm-ignore "true"
-  (calendar))
+   (calendar :halign "center" :valign "center"))

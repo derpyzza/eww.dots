@@ -1,20 +1,29 @@
 $bg: #161616;
 $purp: #B57EF2;
 $gray: #222;
+$pink: #FF7EB6;
+
+$work_pad: 10;
 
 window {
-  background: transparent;
+  font-family: "Iosevka Nerd Font Mono";
+  background: red;
 }
 
 calendar {
   background: $bg;
-  padding: 2px;
+  padding: 5px;
   border-radius: 10px;
   border: 1px solid $purp;
 }
 
+calendar.highlight {
+  color: #363636;
+}
+
 calendar.header {
   border: none;
+  color: $pink;
 }
 
 calendar:selected {
@@ -36,15 +45,12 @@ calendar.button {
 button {
   color: white;
   background: transparent;
-  font-size: 24;
+  font-size: 28;
 }
 
 button.clock {
   padding: 0;
   margin: 0;
-}
-button.vol {
-  padding: 0;
 }
 button.bat {
   padding: 0;
@@ -52,12 +58,32 @@ button.bat {
 }
 button.focused {
   color: $purp;
-  background: $gray;
+  // background: $gray;
+  // transition: background 0.3s ease-in;
+}
+button.focused:hover {
+  color: $bg;
+  background: $purp;
 }
 button.occupied {
-  color: pink;
+  color: $pink;
+}
+button.occupied:hover {
+  color: $bg;
+  background: $pink;
 }
 button.unoccupied {
+  color: $gray;
+}
+button.unoccupied:hover{
+  color: $bg;
+  background: $gray;
+}
+button.music {
+  color: white;
+}
+button.music:hover {
+  background: white;
   color: $gray;
 }
 .work_button {
@@ -78,20 +104,16 @@ box {
   background: $bg;
 }
 
-.test {
-  background: red;
+.volume {
+  padding: 0;
+  font-family: "Iosevka Nerd Font";
+  font-weight: bold;
+  font-size: 18px;
 }
 
-//BATTERY
-.bat_bar {
-  color: $purp;
-  background: #AAA;
-}
-
-//MUSIC
-.vol_bar {
-  color: white;
-  background: #222;
+.battery {
+  font-weight: bold;
+  font-size: 16px;
 }
 
 //CLOCK 
@@ -113,7 +135,3 @@ box {
 
 //MUSIC
 
-//TOPBAR
-.top_bar {
-  margin-top: 10px;
-}

@@ -1,4 +1,4 @@
-
+(include "helper.yuck")
 ;; Main Bar
 (defwidget bar []
   (centerbox   :orientation "v"
@@ -12,32 +12,25 @@
   (box  :class "top_bar"
         :orientation "v"
         :valign "start"
-        :spacing 10
-        :height 90
     ; (button :class reveal :onclick "eww update reveal=${!reveal}" "X")
-    (battery)
-    (volume)))
+    (music)
+    (battery)))
 
 ;; Bottom Section of the bar
 (defwidget bottom_bar [] 
   (box :orientation "v"
        :valign "end"
-    (music)
+    (volume)
     (time)))
 
 ;; Battery Widget
 (defwidget battery []
-    (circular-progress
-        :class "bat_bar"
-        :value bat
-        :thickness 6))
+  (button :class "battery" bat))
 
 ;; Volume widget
 (defwidget volume []
-     (circular-progress
-      :class "vol_bar"
-         :value vol
-         :thickness 6))
+  (button :class "volume" :onclick "pamixer -t" {vol == 'muted' ? 'ﱝ' : vol}))
+  ;;(label :style "color:white; font-size: 18px; font-weight: bold;" :text vol))
 
 ;; Workspaces widget
 ;; TODO: Improve workspace handling
@@ -48,7 +41,7 @@
 (defwidget work [desk ?class]
   (button
     :class {class ?: "work_button"}
-    :onclick "bspc desktop -f ${desk}" ""))
+    :onclick "bspc desktop -f ${desk}" ""))
 
 ;; Music Widget. needs work...
 (defwidget music []
@@ -59,6 +52,6 @@
   (button :class "clock" :onclick "eww open --toggle calendar"
    (box  :orientation "v"
          :class "clock_widget"
-         :spacing -10
+         :spacing -8
          (label :text hour :class "clock_hour")
          (label :text minute :class "clock_minute"))))

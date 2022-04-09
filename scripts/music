@@ -8,4 +8,6 @@ then
 elif [ $status = "Paused" ]
 then
   echo ""
+else 
+  echo ""
 fi

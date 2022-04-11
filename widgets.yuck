@@ -37,21 +37,23 @@
 (defwidget workspaces []
     (literal :content workspace))
 
-;; Workspace Helper widget
-(defwidget work [desk ?class]
-  (button
-    :class {class ?: "work_button"}
-    :onclick "bspc desktop -f ${desk}" ""))
-
 ;; Music Widget. needs work...
 (defwidget music []
   (button :class "music" :onclick "playerctl play-pause" music_status))
 
 ;; Clock Widget
 (defwidget time []
-  (button :class "clock" :onclick "eww open --toggle calendar"
-   (box  :orientation "v"
-         :class "clock_widget"
-         :spacing -8
-         (label :text hour :class "clock_hour")
-         (label :text minute :class "clock_minute"))))
+  (eventbox :onhover "eww update show_date=true"
+            :onhoverlost "eww update show_date=false"
+   (box :orientation "v" :space-evenly false
+    (revealer :reveal show_date :transition "slideup" :duration "100ms"
+      (box :orientation "v" :class "clock_widget"
+        (label :text weekday :class "weekday")
+        (label :text date :class "date")))
+    (button :class "clock"
+     (box  :orientation "v"
+           :class "clock_widget"
+           :spacing -8
+           (label :text hour :class "clock_hour")
+           (label :text minute :class "clock_minute"))))))
+    

@@ -42,7 +42,7 @@ for work in workspaces:
     for o in occupied:
         if work == o and work != focused:
             wk = 'occupied'
-            ic=''
+            ic=''
     final += "(work :desk \"" + work + "\" :class \""+wk+"\" :icon \""+ic+"\" ) "
 final += ")"
 

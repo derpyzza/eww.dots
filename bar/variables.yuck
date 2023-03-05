@@ -1,0 +1,2 @@
+;;poll hour
+(defpoll time :interval "60s" "date +%I:%M")

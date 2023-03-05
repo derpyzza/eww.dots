@@ -1,0 +1,5 @@
+#!/bin/bash
+python3 scripts/work.py
+bspc subscribe desktop node_transfer | while read -r _ ; do
+  python3 scripts/work.py
+done

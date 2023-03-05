@@ -1,0 +1,11 @@
+;; Helper widgets to make configuration easier
+
+(defwidget toggle [label fallback toggle ?command]
+  (button :onclick "eww update ${toggle}=${!toggle} ${command != '' ? "&& ${command}" : ""}"
+    {toggle ? label : fallback}))
+
+;; Workspace Helper widget
+(defwidget work [desk ?class ?icon]
+  (button
+    :class {class ?: "work_button"}
+    :onclick "bspc desktop -f ${desk}" {icon ?: ""}))

@@ -1,0 +1,122 @@
+$bg: #161616;
+$purp: #B57EF2;
+$gray: #222;
+$pink: #FF7EB6;
+
+$work_pad: 10;
+
+window {
+  font-family: "JetBrainsMono Nerd Font Mono";
+  border-radius: 20px;
+}
+
+button {
+  color: white;
+  background: transparent;
+  font-size: 28px;
+}
+
+button.clock {
+  padding: 0px;
+  margin: 0px;
+}
+
+
+button.focused {
+  color: $purp;
+}
+button.focused:hover {
+  color: $bg;
+  background: $purp;
+}
+
+
+button.occupied {
+  color: $pink;
+}
+button.occupied:hover {
+  color: $bg;
+  background: $pink;
+}
+
+
+button.unoccupied {
+  color: $gray;
+}
+button.unoccupied:hover{
+  color: $bg;
+  background: $gray;
+}
+
+
+button.music {
+  color: white;
+}
+button.music:hover {
+  background: white;
+  color: $gray;
+}
+
+
+////WIDGETS////
+.bar {
+  background: $bg;
+  color: #fff;
+  border-radius: 20px;
+}
+
+button.volume {
+  padding: 0;
+  font-family: "Iosevka Nerd Font";
+  font-weight: bold;
+  font-size: 18px;
+}
+button.volume:hover {
+  color: $bg;
+  background: white;
+}
+
+.battery {
+  font-weight: bold;
+  font-size: 16px;
+}
+.battery:hover {
+  color: $bg;
+  background: white;
+}
+//CLOCK 
+.clock_widget {
+  background: #222;
+  padding: 3px;
+  font-size: 20;
+  font-weight: bold;
+  border-radius: 10px;
+}
+
+.clock_hour {
+  color: $purp;
+}
+
+.clock_minute {
+  color: white;
+}
+//weekday class element with $purp color
+.weekday {
+  color: $purp;
+}
+.date{
+  //smaller font
+  font-size: 16;
+}
+
+
+// ===BAR===
+// TODO! Move this to it's own file
+
+.bar-left {
+	padding-left: 20px;
+}
+
+.bar-right {
+	padding-right: 20px;
+}

@@ -1,0 +1,24 @@
+(defpoll bat :interval "20s" "./sidebar/scripts/bat")
+
+;; VOL _________________________________________________
+(defpoll vol :interval "1s" "pamixer --get-volume-human | tr -d \"%\"")
+
+;; TIME ________________________________________
+;;poll hour
+(defpoll hour :interval "10s" "date +%I")
+;;poll minute
+(defpoll minute :interval "10s" "date +%M")
+;;poll abbreviated weekday name (Mon, Tue, etc.)
+(defpoll weekday :interval "50s" "date +%a")
+;;poll date / month (short)
+(defpoll date :interval "50s" "date +%d/%m")
+(defvar show_date false)
+;; TIME ________________________________________
+
+;;MUSIC________________________________________
+(defpoll music_status :interval "2s" "sidebar/scripts/music")
+;;MUSIC________________________________________
+
+;;WORKSPACES_________________________________________________
+(deflisten workspace `sidebar/scripts/workspaces`)
+;;WORKSPACES__________________________________________________

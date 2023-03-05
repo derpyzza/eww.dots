@@ -1,0 +1,58 @@
+;; Main Bar
+(defwidget sidebar []
+  (centerbox   :orientation "v"
+               :class "sidebar"
+       (top_bar)
+       (workspaces)
+       (bottom_bar)))
+
+;; Top section of the bar
+(defwidget top_bar []
+  (box  :class "top_bar"
+        :orientation "v"
+        :valign "start"
+    ; (button :class reveal :onclick "eww update reveal=${!reveal}" "X")
+    (music)
+    (battery)))
+
+;; Bottom Section of the bar
+(defwidget bottom_bar [] 
+  (box :orientation "v"
+       :valign "end"
+    (volume)
+    (time)))
+
+;; Battery Widget
+(defwidget battery []
+  (button :class "battery" bat))
+
+;; Volume widget
+(defwidget volume []
+  (button :class "volume" :onclick "pamixer -t" {vol == 'muted' ? 'ﱝ' : vol}))
+  ;;(label :style "color:white; font-size: 18px; font-weight: bold;" :text vol))
+
+;; Workspaces widget
+;; TODO: Improve workspace handling
+(defwidget workspaces []
+    (literal :content workspace))
+
+;; Music Widget. needs work...
+(defwidget music []
+  (button :class "music" :onclick "playerctl play-pause" music_status))
+
+;; Clock Widget
+(defwidget time []
+  (eventbox :onhover "eww update show_date=true"
+            :onhoverlost "eww update show_date=false"
+   (box :orientation "v" :space-evenly false
+    (revealer :reveal show_date :transition "slideup" :duration "100ms"
+      (box :orientation "v" :class "clock_widget"
+        (label :text weekday :class "weekday")
+        (label :text date :class "date")))
+    (button :class "clock"
+     (box  :orientation "v"
+           :class "clock_widget"
+           :spacing -8
+           (label :text hour :class "clock_hour")
+           (label :text minute :class "clock_minute"))))))
+    

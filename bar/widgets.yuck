@@ -1,0 +1,30 @@
+
+(defwidget bar []
+	(centerbox 	:orientation "h"
+			:class "bar"
+		(left)
+		(center)
+		(right)))
+
+;; TODO: workspaces, working settings, control center, actual app bar
+
+(defwidget left []
+	(box :class "bar-left" :halign "start"
+		(search)))
+
+(defwidget center []
+	(box :class "bar-center" :halign "center"
+		(app-bar)))
+
+(defwidget right []
+	(box :class "bar-right" :halign "end"
+		(time)))
+
+(defwidget search []
+		(label :text "Search..."))
+
+(defwidget app-bar []
+	(label :text "App Bar"))
+
+(defwidget time []
+	(label :text time)) 

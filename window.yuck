@@ -1,0 +1,14 @@
+(defwindow sidebar
+          :monitor 1
+          :geometry (geometry 
+                      :x "0px"
+                      :y "0px"
+                      :width "45px"
+                      :height "100%"
+                      :anchor "center right")
+          ; :reserve (struts :distance "45px" :side "right")
+          :stacking "bottom"
+	  :exclusive true
+          ; :windowtype "dock"
+          ; :wm-ignore "false"
+      (sidebar))

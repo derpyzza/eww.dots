@@ -1,0 +1,16 @@
+
+(include "control/variables.yuck")
+(include "control/widgets.yuck")
+
+  (defwindow control
+  	:monitor 0
+	:geometry (geometry
+			:x "2%"
+			:y "1%"
+			:width "20%"
+			:height "26%"
+			:anchor "top right")
+	:stacking "fg"
+	:exclusive true
+
+	(control))

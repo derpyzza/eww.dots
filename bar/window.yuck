@@ -1,9 +1,11 @@
 
 (include "bar/widgets.yuck")
 (include "bar/variables.yuck")
+
   (defwindow bar
-  	:monitor 1
-	:geometry (geometry
+;  	:monitor 0
+	:geometry 
+		(geometry
 			:x "3%"
 			:y "1%"
 			:width "96%"
@@ -11,4 +13,17 @@
 			:anchor "top center")
 	:stacking "fg"
 	:exclusive true
+	(bar))
+
+  (defwindow bar_x
+  	:monitor 0
+	:geometry 
+		(geometry
+			:x "0%"
+			:y "1%"
+			:width "96%"
+			:height "40px"
+			:anchor "top center")
+	:stacking "fg"
+	:reserve (struts :distance "1%" :side "top")
 	(bar))

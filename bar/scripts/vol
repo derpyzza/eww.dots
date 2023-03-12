@@ -1,0 +1,4 @@
+#!/bin/zsh
+pactl subscribe | rg --line-buffered "change" | while read -r _; do
+    echo `amixer get Master | grep Left: | awk -F '[][]' '{print $2}' | tr -d '%'`
+done

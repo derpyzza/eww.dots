@@ -1,2 +1,5 @@
-;;poll hour
-(defpoll time :interval "60s" "date +%I:%M")
+(defpoll 	time 		:interval 	"30s" 	"date +%I:%M")
+(deflisten 	vol 		:initial 	"0" 	"/home/derpyzza/.config/eww/bar/scripts/vol")
+(defpoll 	bat 		:interval 	"5s" 	"/home/derpyzza/.config/eww/bar/scripts/bat")
+(defpoll 	window 		:interval 	"0.5s" 	"/home/derpyzza/.config/eww/bar/scripts/window.sh")
+(defpoll 	workspace 	:interval 	"0.5s" 	"/home/derpyzza/.config/eww/bar/scripts/workspace.sh")

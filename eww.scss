@@ -1,25 +1,24 @@
+//@import "control/control.scss";
+
 $bg: #161616;
+//$bg: #292b26;
 $purp: #B57EF2;
 $gray: #222;
 $pink: #FF7EB6;
-$dim: #556;
+$dim: #445;
 $white: #bbc;
-
+// $dim: rgb(159, 163, 138);
+// $white: rgb(193, 204, 187);
 window {
   font-family: "JetBrainsMono Nerd Font Mono";
   background: $bg;
-//   background: rgba(0, 0, 0, 0);
   color: $dim;
-  border-radius: 20px;
+//  background: rgba(0, 0, 0, 0);
+//  border-radius: 20px;
 }
 
 label {
 	color: $dim;
-}
-
-.control-center {
-	padding: 10px;
-	border: 1px solid $pink;
 }
 
 button {
@@ -30,7 +29,6 @@ button {
 ////WIDGETS////
 .bar {
   color: #fff;
-  border-radius: 20px;
 }
 
 // ===BAR===
@@ -96,10 +94,6 @@ button {
 	color: $white;
 }
 
-.control-head {
-	font-weight: bold;
-	padding: 10px;
-	border-radius: 10px;
-	background: #334;
-	color: $bg;
+.date {
+	color: $dim;
 }

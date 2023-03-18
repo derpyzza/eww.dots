@@ -9,6 +9,7 @@
 (defwidget left []
 	(box :class "bar-left" :halign "start" :space-evenly false
 		:spacing 16
+		(windows)
 		(window)
 		))
 
@@ -16,17 +17,19 @@
 	(box :class "bar-center" :halign "center"
 		:space-evenly false :spacing 4
 
-		(label :text "<-|")
-		(app-bar)
-		(label :text "|->")
+		;(label :text "<-|")
+		;(app-bar)
+		;(label :text "|->")
+		(label :text ";_;")
 		))
 
 (defwidget right []
 	(box :class "bar-right" :halign "end" :space-evenly false :spacing 16
 		(bat)
 		(vol)
+		(date)
 		(time)
-		(menu)))
+		))
 
 (defwidget bat []
 	(label :text {"BAT:" + bat}))
@@ -36,6 +39,10 @@
 
 (defwidget window []
 		(label :class "search-label" :text window)
+		)
+
+(defwidget windows []
+		(label :class "search-label" :text windows)
 		)
 
 (defwidget workspace []
@@ -51,6 +58,9 @@
 
 (defwidget time []
 	(label :class "time" :text time)) 
+
+(defwidget date []
+	(label :class "date" :text date)) 
 
 (defwidget menu []
 	(box :class "menu"

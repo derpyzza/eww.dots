@@ -1,5 +1,4 @@
 (include "bar/window.yuck")
-(include "control/window.yuck")
 
 (defwindow test
 	:monitor 1

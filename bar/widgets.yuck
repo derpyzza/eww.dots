@@ -7,51 +7,50 @@
 ;; TODO: workspaces, working settings, control center, actual app bar
 
 (defwidget left []
-	(box :class "bar-left" :halign "start" :space-evenly false
+	(box :class "bar-mod" :halign "start" :space-evenly false
 		:spacing 16
-		(window)
+		(windows)
 		))
 
 (defwidget center []
-	(box :class "bar-center" :halign "center"
+	(box :class "bar-mod" :halign "center"
 		:space-evenly false :spacing 4
-
-		(label :text "<-|")
-		(app-bar)
-		(label :text "|->")
+		(window)
 		))
 
 (defwidget right []
-	(box :class "bar-right" :halign "end" :space-evenly false :spacing 16
+	(box :class "bar-mod" :halign "end" :space-evenly false :spacing 16
 		(bat)
 		(vol)
 		(time)
-		(menu)))
+		(date)
+		))
 
 (defwidget bat []
-	(label :text {"BAT:" + bat}))
+	(box :space-evenly false
+		(label :class "dim" :text "BAT:")
+		(label :class "bright" :text bat)
+	))
 
 (defwidget vol []
-	(label :text {"VOL:" + vol}))
+	(box :space-evenly false
+		(label :class "dim" :text "VOL:")
+		(label :class "bright" :text vol)
+	))
 
 (defwidget window []
-		(label :class "search-label" :text window)
+		(label :class "dim" :text window)
+		)
+
+(defwidget windows []
+		(label :class "dim" :text windows)
 		)
 
 (defwidget workspace []
 	(label :class "search-label" :text workspace))
 
-(defwidget app-bar []
-	(box :class "app-bar"
-		(button :onclick "exec kitty $HOME &" :tooltip "Launch Terminal" "")
-		(button :onclick "exec kitty fm --start-dir $HOME &" :tooltip "File Manager" "")
-		(button :onclick "exec krita &" :tooltip "Launch Krita" "")
-		(button :onclick "exec obsidian &" :tooltip "Launch Obsidian" "")
-		))
-
 (defwidget time []
-	(label :class "time" :text time)) 
+	(label :class "bright" :text time)) 
 
-(defwidget menu []
-	(box :class "menu"
-	(button :tooltip "Control Menu" :onclick "/home/derpyzza/eww-wayland/target/release/eww open control" "")))
+(defwidget date []
+	(label :class "dim" :text date)) 

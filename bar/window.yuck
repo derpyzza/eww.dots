@@ -2,14 +2,14 @@
 (include "bar/widgets.yuck")
 (include "bar/variables.yuck")
 
-  (defwindow bar
-;  	:monitor 0
+  (defwindow bar  	
+	:monitor 1
 	:geometry 
 		(geometry
 			:x "3%"
 			:y "0%"
 			:width "100%"
-			:height "50px"
+			:height "40px"
 			:anchor "bottom center")
 	:stacking "fg"
 	:exclusive true

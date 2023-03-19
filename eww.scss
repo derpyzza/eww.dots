@@ -1,99 +1,20 @@
-//@import "control/control.scss";
+@import "bar/bar.scss";
 
 $bg: #161616;
-//$bg: #292b26;
-$purp: #B57EF2;
-$gray: #222;
-$pink: #FF7EB6;
 $dim: #445;
 $white: #bbc;
+
+// green
+//$bg: #292b26;
 // $dim: rgb(159, 163, 138);
 // $white: rgb(193, 204, 187);
+
 window {
   font-family: "JetBrainsMono Nerd Font Mono";
   background: $bg;
   color: $dim;
-//  background: rgba(0, 0, 0, 0);
-//  border-radius: 20px;
 }
 
 label {
-	color: $dim;
-}
-
-button {
-	background: $bg;
-	border: none;
-}
-
-////WIDGETS////
-.bar {
-  color: #fff;
-}
-
-// ===BAR===
-// TODO! Move this to it's own file
-
-.bar-left {
-	background-color: $bg;
-	border-radius: 20px;
-	padding: 0px 20px;
-}
-
-.bar-right {
-	background-color: $bg;
-	border-radius: 20px;
-	padding: 0px 30px;
-}
-
-.bar-center {
-	background-color: $bg;
-	border-radius: 20px;
-	padding: 0px 20px;
-}
-
-.app-bar {
-	background-color: $bg;
-	padding: 5px;
-	border-radius: 20px;
-}
-
-.app-bar > button {
-	color: $dim;
-	font-size: 22px;
-	border-radius: 10px;
-	transition: color .4s ease;
-}
-
-.app-bar > button:hover {
-	color: #99A;
-}
-
-.search {
-	background: $pink;
-}
-
-.search-label {
-	color: $dim;
-	background: $bg;
-}
-
-.menu {
-	background: $bg;
-	margin-left: -8px;
-	margin-right: -8px;
-	border: none;
-	outline: none;
-}
-
-.menu > button {
-	color: $dim;
-}
-
-.time {
-	color: $white;
-}
-
-.date {
 	color: $dim;
 }

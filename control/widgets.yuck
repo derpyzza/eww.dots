@@ -1,6 +1,0 @@
-(defwidget control [] 
-	(box :class "control-center" :valign "start"
-		(label :halign "start" :class "control-head" :text "Control Center")
-		(button :halign "end" :class "control-head" :onclick "/home/derpyzza/eww-wayland/target/release/eww close control" "<")
-
-	))
